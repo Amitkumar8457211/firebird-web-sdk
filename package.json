@@ -1,7 +1,7 @@
 {
-  "name": "altruist-sdk-web",
-  "version": "0.0.4",
-  "description": "altruist Web SDK",
+  "name": "firebird-sdk-web",
+  "version": "1.0.0",
+  "description": "firebird Web SDK",
   "main": "lib/firebird.js",
   "directories": {
     "example": "examples",
@@ -19,17 +19,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ershyam413/altruist-sdk-web.git"
+    "url": "https://github.com/Amitkumar8457211/firebird-web-sdk"
   },
   "keywords": [
     "Firebird",
     "Analytics",
     "Web"
   ],
-  "author": "Firebird <hello@count.ly> (https://www.altruistindia.com/)",
+  "author": "Firebird  (https://www.altruistindia.com/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ershyam413/altruist-sdk-web/issues"
+    "url": "https://github.com/Amitkumar8457211/firebird-web-sdk/issues"
   },
   "homepage": "https://www.altruistindia.com/",
   "devDependencies": {
@@ -45,7 +45,7 @@
     "stylelint": "14.9.1",
     "stylelint-config-standard": "28.0.0"
   },
-  "npmName": "altruist-sdk-web",
+  "npmName": "firebird-sdk-web",
   "npmFileMap": [
     {
       "basePath": "lib",
