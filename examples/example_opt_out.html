@@ -1,0 +1,75 @@
+<html>
+
+<head>
+    <!-- Page styling here -->
+    <link rel='stylesheet' type='text/css' href='./style/style.css'>
+
+    <!--Firebird script-->
+    <script type='text/javascript' src='../lib/firebird.js'></script>
+    <script type='text/javascript'>
+
+        //initializing firebird with params
+        Firebird.init({
+            app_key: "YOUR_APP_KEY",
+            url: "https://your.domain.firebird", //your server goes here
+            debug: true
+        })
+        //track sessions automatically
+        Firebird.track_sessions();
+
+        //track pageviews automatically
+        Firebird.track_pageview();
+
+        //track any clicks to webpages automatically
+        Firebird.track_clicks();
+
+        //track link clicks automatically
+        Firebird.track_links();
+
+        //track form submissions automatically
+        Firebird.track_forms();
+
+        //track javascript errors
+        Firebird.track_errors({ jquery: "1.10", jqueryui: "1.10" });
+    </script>
+</head>
+
+<body>
+    <!-- Header, banner etc. Top part of your site  -->
+    <div id="header">
+        <h1>Opting Out</h1>
+        <img id="logo" src="./images/logo.png">
+    </div>
+
+    <center>
+        <img src="./images/team_countly.jpg" id="wallpaper" />
+        <h3 id='top'></h3>
+        <p><input type="button" id="optButton" onclick="testOpt()" value=""></p>
+    </center>
+    <script type='text/javascript'>
+        //send event on button click
+        function testOpt() {
+            if (Firebird.ignore_visitor) {
+                Firebird.opt_in();
+            }
+            else {
+                Firebird.opt_out();
+            }
+            setOpt();
+        }
+        function setOpt() {
+            if (Firebird.ignore_visitor) {
+                //opted out, allow opt in
+                document.getElementById("top").innerHTML = "You are Opted Out";
+                document.getElementById("optButton").value = "Opt in";
+            }
+            else {
+                document.getElementById("top").innerHTML = "You are Opted In";
+                document.getElementById("optButton").value = "Opt out";
+            }
+        }
+        setOpt();
+    </script>
+</body>
+
+</html>

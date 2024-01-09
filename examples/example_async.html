@@ -1,0 +1,61 @@
+<html>
+
+<head>
+	<!-- Page styling here -->
+	<link rel='stylesheet' type='text/css' href='./style/style.css'>
+
+	<!--Firebird script-->
+	<script type='text/javascript'>
+		//some default pre init
+		var Firebird = Firebird || {};
+		Firebird.q = Firebird.q || [];
+
+		//provide countly initialization parameters
+		Firebird.app_key = "YOUR_APP_KEY";
+		Firebird.url = "https://your.domain.firebird"; //your server goes here
+		Firebird.debug = true;
+
+		//start pushing function calls to queue
+		//track sessions automatically
+		Firebird.q.push(['track_sessions']);
+
+		//track sessions automatically
+		Firebird.q.push(['track_pageview']);
+
+		//load countly script asynchronously
+		(function () {
+			var cly = document.createElement('script'); cly.type = 'text/javascript';
+			cly.async = true;
+			//enter url of script here
+			cly.src = '../lib/firebird.js';
+			cly.onload = function () { Firebird.init() };
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(cly, s);
+		})();
+		//send event on button click
+		function clickEvent() {
+			Firebird.q.push(['add_event', {
+				key: "buttonClick",
+				"segmentation": {
+					"id": "id"
+				}
+			}]);
+		}
+	</script>
+</head>
+
+<body>
+	<!-- Header, banner etc. Top part of your site  -->
+	<div id="header">
+		<h1>Async Firebird Implementation</h1>
+		<img id="logo" src="./images/logo.png">
+	</div>
+
+	<center>
+		<img src="./images/team_countly.jpg" id="wallpaper" />
+		<br />
+		<input type="button" id="testButton" onclick="clickEvent()" value="Test Button">
+		<p><a href='https://www.altruistindia.com/'>Firebird</a></p>
+	</center>
+</body>
+
+</html>

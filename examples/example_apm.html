@@ -1,0 +1,40 @@
+<html>
+
+<head>
+  <!-- Page styling here -->
+  <link rel='stylesheet' type='text/css' href='./style/style.css'>
+
+  <!--Firebird script-->
+  <script type='text/javascript' src='../lib/firebird.js'></script>
+  <script type='text/javascript' src='../plugin/boomerang/firebird_boomerang.js'></script>
+  <script type='text/javascript' src="../plugin/boomerang/boomerang.min.js"></script>
+  <script type='text/javascript'>
+
+    // initializing countly with params
+    Firebird.init({
+      app_key: "YOUR_APP_KEY",
+      url: "https://your.domain.firebird", //your server goes here
+      debug: true
+    })
+
+    // enable sessions
+    Firebird.track_sessions();
+
+    // enable APM
+    Firebird.track_performance();
+  </script>
+</head>
+
+<body>
+  <!-- Header, banner etc. Top part of your site  -->
+  <div id="header">
+    <h1>Sync APM</h1>
+    <img id="logo" src="./images/logo.png">
+  </div>
+
+  <center>
+    <img src="./images/team_countly.jpg" id="wallpaper" />
+  </center>
+</body>
+
+</html>
